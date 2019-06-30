@@ -1,6 +1,5 @@
 import React from 'react';
 import Menu from "./Menu";
-import './App.css';
 import { Route, Switch } from "react-router-dom";
 import Home from './Home';
 import Customers from "./Customers";
