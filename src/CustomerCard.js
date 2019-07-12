@@ -3,15 +3,15 @@ import './CustomerCard.css';
 
 function CustomerCard({ company, address, city }) {
     return (
-        <div class="card">
-            <div class="card-image">
-                <div class="icon-wrapper">
-                    <i class="icon">people</i>
+        <div className="card">
+            <div className="card-image">
+                <div className="icon-wrapper">
+                    <i className="icon">people</i>
                 </div>
             </div>
-            <div class="card-body">
-                <div class="text-wrapper">
-                    <div class="text">
+            <div className="card-body">
+                <div className="text-wrapper">
+                    <div className="text">
                         <h1>{company}</h1>
                         <p>{address}</p>
                         <p>{city}</p>
