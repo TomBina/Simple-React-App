@@ -1,0 +1,32 @@
+[
+    {
+        "id": 1,
+        "company": "Microsoft",
+        "address": "177 Arnold Ave.",
+        "city": "Waxhaw"
+    },
+    {
+        "id": 2,
+        "company": "Dell",
+        "address": "4654 Benedum Drive",
+        "city": "New York"
+    },
+    {
+        "id": 3,
+        "company": "Amazon",
+        "address": "238  Daylene Drive",
+        "city": "Shingletown"
+    },
+    {
+        "id": 4,
+        "company": "Facebook",
+        "address": "2025 Wakefield Street",
+        "city": "Philadelphia"
+    },
+    {
+        "id": 5,
+        "company": "Google",
+        "address": "2429 Fidler Drive",
+        "city": "San Antonio"
+    }
+]
