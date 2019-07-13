@@ -34,7 +34,7 @@ class Customers extends React.Component {
         });
     }
 
-    async componentWillUnmount() {
+    componentWillUnmount() {
         console.log("Component will be removed.");
     }
 }
