@@ -1,42 +1,34 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import CustomerCard from './CustomerCard';
 
-class Customers extends React.Component {
-    constructor() {
-        super();
+function Customers() {
+    let [customers, setCustomers] = useState({
+        customers: []
+    });
+    let cards = customers.customers.map(c => <CustomerCard
+        key={c.id}
+        company={c.company}
+        address={c.address}
+        city={c.city}>
+    </CustomerCard>)
 
-        this.state = {
-            customers: []
-        };
-    }
+    useEffect(() => {
+        async function getCustomers() {
+            let customers = await fetch("/customers.json").then(response => response.json());
+            setCustomers({
+                customers: customers
+            });
+        }
 
-    render() {
-        let cards = this.state.customers.map(c => <CustomerCard
-            key={c.id}
-            company={c.company}
-            address={c.address}
-            city={c.city}>
-        </CustomerCard>)
-
-        return (
-            <div>
-                <h1>Customers</h1>
-                {cards.length > 0 ? cards : "loading.."}
-            </div>
-        )
-    }
-
-    async componentDidMount() {
-        let customers = await fetch("/customers.json").then(response => response.json());
-
-        this.setState({
-            customers: customers
-        });
-    }
-
-    componentWillUnmount() {
-        console.log("Component will be removed.");
-    }
+        getCustomers();
+    }, []);
+    
+    return (
+        <div>
+            <h1>Customers</h1>
+            {cards.length > 0 ? cards : "loading.."}
+        </div>
+    );
 }
 
 export default Customers;
