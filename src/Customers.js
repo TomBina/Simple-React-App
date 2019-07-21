@@ -2,10 +2,8 @@ import React, { useState, useEffect } from 'react';
 import CustomerCard from './CustomerCard';
 
 function Customers() {
-    let [customers, setCustomers] = useState({
-        customers: []
-    });
-    let cards = customers.customers.map(c => <CustomerCard
+    let [customers, setCustomers] = useState([]);
+    let cards = customers.map(c => <CustomerCard
         key={c.id}
         company={c.company}
         address={c.address}
@@ -15,9 +13,7 @@ function Customers() {
     useEffect(() => {
         async function getCustomers() {
             let customers = await fetch("/customers.json").then(response => response.json());
-            setCustomers({
-                customers: customers
-            });
+            setCustomers(customers);
         }
 
         getCustomers();
