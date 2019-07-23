@@ -28,5 +28,11 @@
         "company": "Google",
         "address": "2429 Fidler Drive",
         "city": "San Antonio"
+    },
+    {
+        "id": 6,
+        "company": "GitHub",
+        "address": "88 Colin P Kelly Jr St",
+        "city": "San Francisco"
     }
 ]
