@@ -9,3 +9,4 @@ Posts in this course:
 - [Using components and props](https://www.coolbytes.io/post/1246/using-components-and-props)
 - [Understanding state and component lifecycle](https://www.coolbytes.io/post/1247/understanding-state-and-component-lifecycle)
 - [Managing state with hooks](https://www.coolbytes.io/post/1248/managing-state-with-hooks)
+- [Working with events](https://www.coolbytes.io/post/1249/working-with-events)
