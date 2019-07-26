@@ -12,6 +12,9 @@ function Menu() {
                 <li>
                     <Link to="/customers/">Customers</Link>
                 </li>
+                <li>
+                    <Link to="/addcustomer/">Add customer</Link>
+                </li>
             </ul>
 
         </header>
