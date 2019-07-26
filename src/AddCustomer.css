@@ -1,0 +1,10 @@
+.addcustomer-input {
+    display:block;
+    width:100%;
+    box-sizing: border-box;
+    padding:10px;
+    font-size:1.2rem;
+    margin:1em 0;
+    font-weight:700;
+    border:1px solid #c9c9c9;
+}
