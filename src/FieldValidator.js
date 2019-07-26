@@ -1,22 +1,21 @@
 import React, { useState } from "react";
 import "./FormValidator.css";
 
-function FieldValidator(props) {
-    let form = props.form;
+function FieldValidator({name, value, required, form, children}) {
     let [dirty, setDirty] = useState(false);
-    let child = React.Children.toArray(props.children)[0];
+    let child = React.Children.toArray(children)[0];
     let clonedChild = React.cloneElement(child, {
-        name: props.name,
-        value: props.value,
-        placeholder: props.name,
+        name: name,
+        value: value,
+        placeholder: name,
         onChange: (e) => {
             form.handleChange(e);
             setDirty(true);
         }
     });
 
-    if (props.required && !props.value) {
-        form.setInvalid(props.name);
+    if (required && !value) {
+        form.setInvalid(name);
 
         return (
             <>
@@ -26,7 +25,7 @@ function FieldValidator(props) {
         )
     }
     else {
-        form.setValid(props.name);
+        form.setValid(name);
         return clonedChild;
     }
 }

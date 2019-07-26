@@ -25,7 +25,7 @@ function AddCustomer() {
             <FieldValidator required={true} value={customer.city} name="city" form={form}>
                 <input type="text" className="addcustomer-input" />
             </FieldValidator>
-            <button type="submit" disabled={!form.isValid()}>Add customer</button>
+            <button type="submit" disabled={!form.isValid()}>add customer</button>
         </form>
     )
 }
