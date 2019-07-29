@@ -2,6 +2,7 @@ import React from "react";
 import "./AddCustomer.css";
 import { useForm } from "./hooks/useForm";
 import FieldValidator from "./FieldValidator";
+import db from "./firebase/firebase";
 
 function AddCustomer() {
     let [customer, form] = useForm({
@@ -10,8 +11,9 @@ function AddCustomer() {
         city: ""
     });
     
-    function onSubmit(e) {
+    async function onSubmit(e) {
         e.preventDefault();
+        await db.collection("customers").add(customer);
     }
 
     return (

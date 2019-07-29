@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import CustomerCard from './CustomerCard';
+import db from "./firebase/firebase";
 import './Customers.css';
 
 function Customers() {
@@ -7,8 +8,8 @@ function Customers() {
     let [customers, setCustomers] = useState([]);
     let [query, setQuery] = useState("");
     let [message, setMessage] = useState("Loading..");
-    let cards = customers.map(c => <CustomerCard
-        key={c.id}
+    let cards = customers.map((c, index) => <CustomerCard
+        key={index}
         company={c.company}
         address={c.address}
         city={c.city}>
@@ -20,21 +21,24 @@ function Customers() {
 
     useEffect(() => {
         async function getCustomers() {
-            let customers = await fetch("/customers.json").then(response => response.json());
-
             if (!query) {
+                let documents = await db.collection("customers").get();
+                let customers = documents.docs.map(d => d.data());
+
                 setMessage(null);
                 setCustomers(customers);
                 return;
             }
 
-            customers = customers.filter(c => c.company.toLowerCase().startsWith(query.toLowerCase()));
+            let documents = await db.collection("customers").where("company", "==", query).get();
+            let customers = documents.docs.map(d => d.data());
 
             if (customers.length === 0) {
                 setMessage("No results found.");
                 return;
             }
 
+            setMessage(null); // dont forget bugfix
             setCustomers(customers);
         }
 
