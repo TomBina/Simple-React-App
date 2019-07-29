@@ -35,6 +35,7 @@ function Customers() {
                 return;
             }
 
+            setMessage(null);
             setCustomers(customers);
         }
 
