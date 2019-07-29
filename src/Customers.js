@@ -22,23 +22,25 @@ function Customers() {
     useEffect(() => {
         async function getCustomers() {
             if (!query) {
-                let documents = await db.collection("customers").get();
-                let customers = documents.docs.map(d => d.data());
+                let snapshot = await db.collection("customers").get();
+                let customers = snapshot.docs.map(d => d.data());
 
                 setMessage(null);
                 setCustomers(customers);
                 return;
             }
 
-            let documents = await db.collection("customers").where("company", "==", query).get();
-            let customers = documents.docs.map(d => d.data());
+            let searchStart = query.toUpperCase();
+            let searchEnd = `${searchStart}\uf8ff`;
+            let snapshot = await db.collection("customers").where("company", ">=", searchStart).where("company", "<", searchEnd).get();
+            let customers = snapshot.docs.map(d => d.data());
 
             if (customers.length === 0) {
                 setMessage("No results found.");
                 return;
             }
 
-            setMessage(null); // dont forget bugfix
+            setMessage(null);
             setCustomers(customers);
         }
 
