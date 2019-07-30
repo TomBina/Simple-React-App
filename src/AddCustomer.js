@@ -15,7 +15,7 @@ function AddCustomer() {
 
     async function onSubmit(e) {
         e.preventDefault();
-        await db.collection("customers2").add(customer);
+        await db.collection("customers").add(customer);
         setSaved(true);
     }
 
