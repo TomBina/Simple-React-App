@@ -9,5 +9,5 @@ Posts in this course:
 - [Understanding state and component lifecycle](https://www.coolbytes.io/post/1247/understanding-state-and-component-lifecycle)
 - [Managing state with hooks](https://www.coolbytes.io/post/1248/managing-state-with-hooks)
 - [Working with events](https://www.coolbytes.io/post/1249/working-with-events)
-- [Integrate React with Firebase](https://www.coolbytes.io/post/1251/integrate-react-with-firebase)
 - [Form validation using custom hooks](https://www.coolbytes.io/post/1250/form-validation-using-custom-hooks)
+- [Integrate React with Firebase](https://www.coolbytes.io/post/1251/integrate-react-with-firebase)
