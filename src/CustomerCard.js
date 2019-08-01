@@ -30,9 +30,9 @@ function CustomerCard({ id, company, address, city, onDeleted }) {
                     </div>
                     <div className="card-actions">
                         <Link to={`/updatecustomer/${id}`}>
-                            <i className="icon">edit</i>
+                            <i className="icon card-action-icon">edit</i>
                         </Link>
-                        <i className="icon" onClick={handleDelete}>delete</i>
+                        <i className="icon card-action-icon" onClick={handleDelete}>delete</i>
                     </div>
                 </div>
             </div>
