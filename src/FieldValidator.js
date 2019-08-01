@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./FormValidator.css";
 
-function FieldValidator({name, value, required, form, children}) {
+function FieldValidator({ name, value, required, form, children }) {
     let [dirty, setDirty] = useState(false);
     let child = React.Children.toArray(children)[0];
     let clonedChild = React.cloneElement(child, {
@@ -14,9 +14,19 @@ function FieldValidator({name, value, required, form, children}) {
         }
     });
 
-    if (required && !value) {
-        form.setInvalid(name);
+    let invalid = required && !value;
 
+    useEffect(() => {
+        if (invalid) {
+            form.setInvalid(name)
+        }
+        else {
+            form.setValid(name);
+        }
+    }, [form, invalid, name]);
+
+
+    if (invalid) {
         return (
             <>
                 {clonedChild}
@@ -25,7 +35,6 @@ function FieldValidator({name, value, required, form, children}) {
         )
     }
     else {
-        form.setValid(name);
         return clonedChild;
     }
 }
