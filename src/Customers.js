@@ -23,17 +23,15 @@ function Customers() {
         async function getCustomers() {
             if (!query) {
                 let snapshot = await db.collection("customers").get();
-                let customers = snapshot.docs.map(d => d.data());
+                let customers = snapshot.docs.map(d => ({ id: d.id, ...d.data() }));
 
                 setMessage(null);
                 setCustomers(customers);
                 return;
             }
 
-            let searchStart = query.toUpperCase();
-            let searchEnd = `${searchStart}\uf8ff`;
-            let snapshot = await db.collection("customers").where("company", ">=", searchStart).where("company", "<", searchEnd).get();
-            let customers = snapshot.docs.map(d => d.data());
+            let snapshot = await db.collection("customers").get();
+            let customers = snapshot.docs.map(d => ({ id: d.id, ...d.data() })).filter(c => c.company.toLowerCase().startsWith(query.toLowerCase()));
 
             if (customers.length === 0) {
                 setMessage("No results found.");
