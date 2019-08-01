@@ -28,5 +28,5 @@ export function useForm(obj) {
         }
     }
 
-    return [values, form];
+    return [values, form, setValues];
 }

@@ -5,6 +5,7 @@ import Home from './Home';
 import Customers from "./Customers";
 import NotFound from "./NotFound";
 import AddCustomer from './AddCustomer';
+import UpdateCustomer from "./UpdateCustomer";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Route exact path="/" component={Home} />
         <Route path="/customers/" component={Customers} />
         <Route path="/addcustomer/" component={AddCustomer} />
+        <Route path="/updatecustomer/:id" component={UpdateCustomer} />
         <Route component={NotFound} />
       </Switch>
     </div>

@@ -8,11 +8,9 @@ function Customers() {
     let [customers, setCustomers] = useState([]);
     let [query, setQuery] = useState("");
     let [message, setMessage] = useState("Loading..");
-    let cards = customers.map((c, index) => <CustomerCard
-        key={index}
-        company={c.company}
-        address={c.address}
-        city={c.city}>
+    let cards = customers.map(c => <CustomerCard
+        key={c.id}
+        {...c}>
     </CustomerCard>)
 
     useEffect(() => {
@@ -23,7 +21,7 @@ function Customers() {
         async function getCustomers() {
             if (!query) {
                 let snapshot = await db.collection("customers").get();
-                let customers = snapshot.docs.map(d => d.data());
+                let customers = snapshot.docs.map(d => ({ id: d.id, ...d.data() }));
 
                 setMessage(null);
                 setCustomers(customers);
@@ -33,7 +31,7 @@ function Customers() {
             let searchStart = query.toUpperCase();
             let searchEnd = `${searchStart}\uf8ff`;
             let snapshot = await db.collection("customers").where("company", ">=", searchStart).where("company", "<", searchEnd).get();
-            let customers = snapshot.docs.map(d => d.data());
+            let customers = snapshot.docs.map(d => ({ id: d.id, ...d.data() }));
 
             if (customers.length === 0) {
                 setMessage("No results found.");
