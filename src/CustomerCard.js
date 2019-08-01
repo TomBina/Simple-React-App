@@ -1,17 +1,15 @@
 import React from "react";
 import './CustomerCard.css';
 import { Link } from "react-router-dom";
-import db from "./firebase/firebase";
 
-function CustomerCard({ id, company, address, city, onDeleted }) {
+function CustomerCard({ id, company, address, city, onDelete }) {
     function handleDelete() {
         // eslint-disable-next-line no-restricted-globals
         if (!confirm("are you sure?")) {
             return;
         }
 
-        db.doc(`customers/${id}`).delete();
-        onDeleted(id);
+        onDelete(id);
     }
     
     return (

@@ -9,12 +9,13 @@ function Customers() {
     let [query, setQuery] = useState("");
     let [message, setMessage] = useState("Loading..");
     let cards = customers.map(c => <CustomerCard
-        onDeleted={handleDeleted}
+        onDelete={handleDelete}
         key={c.id}
         {...c}>
     </CustomerCard>)
 
-    function handleDeleted(id) {
+    function handleDelete(id) {
+        db.doc(`customers/${id}`).delete();
         setCustomers(customers.filter(c => c.id !== id));
     }
 
