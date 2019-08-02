@@ -48,3 +48,18 @@
 .card-body h1 {
     font-size:1.1rem;
 }
+
+.card-actions {
+    position: absolute;
+    right:15px;
+    top:15px;
+}
+
+.card-actions i:first-child {
+    margin-right:7px;
+}
+
+.card-action-icon {
+    color:#000;
+    cursor:pointer;
+}
