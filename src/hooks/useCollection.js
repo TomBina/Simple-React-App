@@ -20,5 +20,13 @@ export function useCollection(name) {
         getCustomers();
     }, [name]);
 
-    return [values.customers, setValues, values.done];
+    let deleteValue = function (id) {
+        db.doc(`customers/${id}`).delete();
+        setValues({
+            ...values,
+            customers: values.customers.filter(c => c.id !== id)
+        });
+    }
+
+    return [values.customers, values.done, deleteValue];
 }

@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
 import CustomerCard from './CustomerCard';
-import db from "./firebase/firebase";
 import { useCollection } from './hooks/useCollection';
 import './Customers.css';
 
@@ -8,7 +7,7 @@ function Customers() {
     let searchElement = useRef();
     let [query, setQuery] = useState("");
     let [results, setResults] = useState("Loading..");
-    let [customers, setCustomers, done] = useCollection("customers");
+    let [customers, done, deleteCustomer] = useCollection("customers");
 
     useEffect(() => {
         if (!done) {
@@ -25,16 +24,11 @@ function Customers() {
         }
 
         setResults(foundCustomers.map(c => <CustomerCard
-            onDelete={handleDelete}
+            onDelete={deleteCustomer}
             key={c.id}
             {...c}>
         </CustomerCard>));
-    }, [done, query])
-
-    function handleDelete(id) {
-        db.doc(`customers/${id}`).delete();
-        setCustomers(customers.filter(c => c.id !== id));
-    }
+    }, [customers, query])
 
     useEffect(() => {
         searchElement.current.focus();
