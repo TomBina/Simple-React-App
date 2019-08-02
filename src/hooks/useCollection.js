@@ -3,16 +3,16 @@ import db from "../firebase/firebase";
 
 export function useCollection(name) {
     let [values, setValues] = useState({
-        customers: [],
+        data: [],
         done: false
     });
 
     useEffect(() => {
         async function getCustomers() {
             let snapshot = await db.collection(name).get();
-            let customers = snapshot.docs.map(d => ({ id: d.id, ...d.data() }));
+            
             setValues({
-                customers,
+                data: snapshot.docs.map(d => ({ id: d.id, ...d.data() })),
                 done: true
             });
         }
@@ -24,9 +24,9 @@ export function useCollection(name) {
         db.doc(`customers/${id}`).delete();
         setValues({
             ...values,
-            customers: values.customers.filter(c => c.id !== id)
+            data: values.data.filter(c => c.id !== id)
         });
     }
 
-    return [values.customers, values.done, deleteValue];
+    return [values.data, values.done, deleteValue];
 }
