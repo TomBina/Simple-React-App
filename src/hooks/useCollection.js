@@ -21,7 +21,7 @@ export function useCollection(name) {
     }, [name]);
 
     let deleteValue = function (id) {
-        db.doc(`customers/${id}`).delete();
+        db.doc(`${name}/${id}`).delete();
         setValues({
             ...values,
             data: values.data.filter(c => c.id !== id)
