@@ -3,7 +3,7 @@ import FieldValidator from "./FieldValidator";
 import { useForm } from "./hooks/useForm";
 import { auth } from "./firebase/firebase";
 
-function Login() {
+function SignIn() {
     let [credentials, form] = useForm({
         email: "",
         password: ""
@@ -11,7 +11,7 @@ function Login() {
     let [register, setRegister] = useState(false);
     let [errorMessage, setErrorMessage] = useState("");
 
-    async function handleLogin(e) {
+    async function handleSignIn(e) {
         e.preventDefault();
 
         try {
@@ -35,7 +35,7 @@ function Login() {
 
     if (!register) {
         return (
-            <form onSubmit={handleLogin}>
+            <form onSubmit={handleSignIn}>
                 <h1>Login</h1>
                 {errorMessage}
                 <FieldValidator required={true} email={true} value={credentials.email} name="email" form={form}>
@@ -75,4 +75,4 @@ function Login() {
     }
 }
 
-export default Login;
+export default SignIn;

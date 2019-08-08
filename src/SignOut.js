@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { auth } from "./firebase/firebase";
 import { Redirect } from "react-router-dom";
 
-function Logout() {
+function SignOut() {
     let [succesful, setSuccesful] = useState(false);
 
     useEffect(() => {
@@ -19,4 +19,4 @@ function Logout() {
     }
 }
 
-export default Logout;
+export default SignOut;

@@ -6,7 +6,7 @@ import Customers from "./Customers";
 import NotFound from "./NotFound";
 import AddCustomer from './AddCustomer';
 import UpdateCustomer from "./UpdateCustomer";
-import Logout from './Logout';
+import SignOut from './SignOut';
 
 function App() {
   return (
@@ -17,7 +17,7 @@ function App() {
         <Route path="/customers/" component={Customers} />
         <Route path="/addcustomer/" component={AddCustomer} />
         <Route path="/updatecustomer/:id" component={UpdateCustomer} />
-        <Route path="/logout/" component={Logout} />
+        <Route path="/signout/" component={SignOut} />
         <Route component={NotFound} />
       </Switch>
     </div>
