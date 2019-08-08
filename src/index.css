@@ -23,6 +23,10 @@ input {
   border:1px solid #c9c9c9;
 }
 
+button {
+  padding:5px;
+}
+
 .icon {
   font-family: 'Material Icons';
   font-weight: normal;
