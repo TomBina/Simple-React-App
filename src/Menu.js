@@ -16,7 +16,7 @@ function Menu() {
                     <Link to="/addcustomer/">Add customer</Link>
                 </li>
                 <li>
-                    <Link to="/logout/">Logout</Link>
+                    <Link to="/signout/">Logout</Link>
                 </li>
             </ul>
 

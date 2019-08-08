@@ -12,7 +12,7 @@ function UpdateCustomer({ match }) {
         city: ""
     });
     let [saved, setSaved] = useState(false);
-    let doc = useDoc("customers/" + match.params.id, setCustomer);
+    let doc = useDoc("customersv2/" + match.params.id, setCustomer);
 
     async function onSubmit(e) {
         e.preventDefault();
