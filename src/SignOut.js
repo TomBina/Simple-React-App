@@ -3,11 +3,11 @@ import { auth } from "./firebase/firebase";
 import { Redirect } from "react-router-dom";
 
 function SignOut() {
-    let [succesful, setSuccesful] = useState(false);
+    let [succesful, setSuccessful] = useState(false);
 
     useEffect(() => {
         auth().signOut().then(() => {
-            setSuccesful(true);
+            setSuccessful(true);
         })
     }, []);
 
@@ -15,7 +15,7 @@ function SignOut() {
         return <Redirect to="/" />
     }
     else {
-        return "Logging out..";
+        return "Signing you out..";
     }
 }
 

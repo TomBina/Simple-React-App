@@ -9,7 +9,7 @@ function SignIn() {
         email: "",
         password: ""
     });
-    let [register, setRegister] = useState(false);
+    let [signUp, setSignUp] = useState(false);
     let [errorMessage, setErrorMessage] = useState("");
 
     async function handleSignIn(e) {
@@ -23,7 +23,7 @@ function SignIn() {
         }
     }
 
-    async function handleRegister(e) {
+    async function handleSignUp(e) {
         e.preventDefault();
 
         try {
@@ -34,7 +34,7 @@ function SignIn() {
         }
     }
 
-    if (!register) {
+    if (!signUp) {
         return (
             <>
                 <header className="signin-header"></header>
@@ -52,7 +52,7 @@ function SignIn() {
                     <p>
                         Sign up now to use the app.
                     </p>
-                    <button type="button" onClick={() => { setRegister(true); }}>register</button>
+                    <button type="button" onClick={() => { setSignUp(true); }}>register</button>
                 </form>
             </>
         );
@@ -61,7 +61,7 @@ function SignIn() {
         return (
             <>
                 <header className="signin-header"></header>
-                <form onSubmit={handleRegister}>
+                <form onSubmit={handleSignUp}>
                     <h1>Sign up</h1>
                     {errorMessage}
                     <FieldValidator required={true} email={true} value={credentials.email} name="email" form={form}>
@@ -75,7 +75,7 @@ function SignIn() {
                     <p>
                         Login to start using the app.
                     </p>
-                    <button type="button" onClick={() => { setRegister(false); }}>login</button>
+                    <button type="button" onClick={() => { setSignUp(false); }}>login</button>
                 </form>
             </>
         );
