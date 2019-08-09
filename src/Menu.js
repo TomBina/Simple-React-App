@@ -15,6 +15,9 @@ function Menu() {
                 <li>
                     <Link to="/addcustomer/">Add customer</Link>
                 </li>
+                <li>
+                    <Link to="/signout/">Sign out</Link>
+                </li>
             </ul>
 
         </header>

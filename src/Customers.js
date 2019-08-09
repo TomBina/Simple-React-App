@@ -7,7 +7,7 @@ function Customers() {
     let searchElement = useRef();
     let [query, setQuery] = useState("");
     let [results, setResults] = useState("Loading..");
-    let [customers, done, deleteCustomer] = useCollection("customers");
+    let [customers, done, deleteCustomer] = useCollection("customersv2");
 
     useEffect(() => {
         if (!done) {
