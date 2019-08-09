@@ -13,3 +13,4 @@ Posts in this course:
 - [Form validation using custom hooks](https://www.coolbytes.io/post/1250/form-validation-using-custom-hooks)
 - [Integrate React with Firebase](https://www.coolbytes.io/post/1251/integrate-react-with-firebase)
 - [Building custom hooks for Firebase](https://www.coolbytes.io/post/1252/building-custom-hooks-for-firebase)
+- [Securing your app with Firebase auth](https://www.coolbytes.io/post/1253/securing-your-app-with-firebase-auth)
