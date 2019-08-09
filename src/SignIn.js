@@ -39,7 +39,7 @@ function SignIn() {
             <>
                 <header className="signin-header"></header>
                 <form onSubmit={handleSignIn}>
-                    <h1>Login</h1>
+                    <h1>Sign in</h1>
                     {errorMessage}
                     <FieldValidator required={true} email={true} value={credentials.email} name="email" form={form}>
                         <input type="text" />
@@ -50,7 +50,7 @@ function SignIn() {
                     <button type="submit" disabled={!form.isValid()}>login</button>
                     <h2>No account yet?</h2>
                     <p>
-                        Register an account.
+                        Sign up now to use the app.
                     </p>
                     <button type="button" onClick={() => { setRegister(true); }}>register</button>
                 </form>
@@ -62,7 +62,7 @@ function SignIn() {
             <>
                 <header className="signin-header"></header>
                 <form onSubmit={handleRegister}>
-                    <h1>Register</h1>
+                    <h1>Sign up</h1>
                     {errorMessage}
                     <FieldValidator required={true} email={true} value={credentials.email} name="email" form={form}>
                         <input type="text" />
@@ -71,9 +71,9 @@ function SignIn() {
                         <input type="text" />
                     </FieldValidator>
                     <button type="submit" disabled={!form.isValid()}>register</button>
-                    <h2>Got already an account?</h2>
+                    <h2>Already have an account?</h2>
                     <p>
-                        Login to proceed.
+                        Login to start using the app.
                     </p>
                     <button type="button" onClick={() => { setRegister(false); }}>login</button>
                 </form>
