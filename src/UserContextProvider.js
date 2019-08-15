@@ -6,7 +6,7 @@ let UserContext = React.createContext({});
 
 function UserContextProvider({ user }) {
     return (
-        <UserContext.Provider value={user}><BrowserRouter><App /></BrowserRouter></UserContext.Provider>
+        <BrowserRouter><UserContext.Provider value={user}><App /></UserContext.Provider></BrowserRouter>
     )
 }
 

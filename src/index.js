@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { auth } from "./firebase/firebase";
 import SignIn from './SignIn';
-import { UserContextProvider } from "./UserContext";
+import { UserContextProvider } from "./UserContextProvider";
 import './index.css';
 
 auth().onAuthStateChanged(user => {

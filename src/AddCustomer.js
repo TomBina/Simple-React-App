@@ -4,7 +4,7 @@ import "./AddCustomer.css";
 import { useForm } from "./hooks/useForm";
 import FieldValidator from "./FieldValidator";
 import db from "./firebase/firebase";
-import { UserContext } from "./UserContext";
+import { UserContext } from "./UserContextProvider";
 
 function AddCustomer() {
     let [customer, form] = useForm({
