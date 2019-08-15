@@ -1,15 +1,14 @@
 service cloud.firestore {
   match /databases/{database}/documents {
-    match /users/{userId} {
-      allow read, update, delete: if request.auth.uid == userId;
-      allow create: if request.auth.uid != null;
-    }
-
     match /customersv2/{customer} {
       allow read, write: if request.auth.uid != null;
     }
 
     match /customers/{customer} {
+      allow read, write;
+    }
+
+    match /log/{log} {
       allow read, write;
     }
   }

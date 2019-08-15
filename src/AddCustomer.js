@@ -1,9 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { Redirect } from "react-router-dom";
 import "./AddCustomer.css";
 import { useForm } from "./hooks/useForm";
 import FieldValidator from "./FieldValidator";
 import db from "./firebase/firebase";
+import { UserContext } from "./UserContext";
 
 function AddCustomer() {
     let [customer, form] = useForm({
@@ -12,10 +13,21 @@ function AddCustomer() {
         city: ""
     });
     let [saved, setSaved] = useState(false);
+    let userContext = useContext(UserContext);
 
     async function onSubmit(e) {
         e.preventDefault();
-        await db.collection("customersv2").add(customer);
+        await db.collection("customersv2").add({
+            ...customer
+        });
+
+        await db.collection("log").add({
+            level: "Information",
+            uid: userContext.uid,
+            email: userContext.email,
+            message: `Added customer ${customer.company}`
+        });
+        
         setSaved(true);
     }
 
