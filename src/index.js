@@ -1,9 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
-import { BrowserRouter } from "react-router-dom";
 import { auth } from "./firebase/firebase";
 import SignIn from './SignIn';
+import { UserContextProvider } from "./UserContextProvider";
 import './index.css';
 
 auth().onAuthStateChanged(user => {
@@ -11,6 +10,6 @@ auth().onAuthStateChanged(user => {
         ReactDOM.render(<SignIn></SignIn>, document.getElementById("root"))
     }
     else {
-        ReactDOM.render(<BrowserRouter><App /></BrowserRouter>, document.getElementById('root'));
+        ReactDOM.render(<UserContextProvider user={user}></UserContextProvider>, document.getElementById('root'));
     }
 })
