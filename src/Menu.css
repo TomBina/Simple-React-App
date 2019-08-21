@@ -1,0 +1,21 @@
+header {
+    margin:-20px -20px 20px -20px;
+}
+header ul {
+    list-style: none;
+    display:flex;
+    width:100%;
+    box-sizing: border-box;
+    background-color:black;
+}
+
+header li {
+    color:#fff;
+    margin-right:10px;
+    padding:12px;
+}
+
+header li a {
+    color: #fff;
+    text-decoration: none;
+}
