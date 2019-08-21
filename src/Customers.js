@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
 import CustomerCard from './CustomerCard';
-import './Customers.css';
 
 function Customers() {
     let searchElement = useRef();

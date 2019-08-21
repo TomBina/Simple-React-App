@@ -1,5 +1,4 @@
 import React from "react";
-import "./AddCustomer.css";
 import { useForm } from "./hooks/useForm";
 import FieldValidator from "./FieldValidator";
 
