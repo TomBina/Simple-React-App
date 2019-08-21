@@ -3,8 +3,10 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
-  -webkit-font-smoothing: antialiased;
+    -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background:#d1eeff;
+  color:#000;
 }
 
 code {
@@ -16,15 +18,37 @@ input {
   display:block;
   width:100%;
   box-sizing: border-box;
-  padding:10px;
+  padding:10px 10px 10px 0;
   font-size:1.2rem;
-  margin:1em 0;
+  margin-bottom:1em;
   font-weight:700;
-  border:1px solid #c9c9c9;
+  border:0;
+  color:#000;
+  background-color:transparent;
+  border-bottom:2px solid #76c4e9;
+}
+
+input::placeholder{
+  color:gray;
+}
+
+input:focus {
+  outline: none !important;
+  border-bottom-color:black;
 }
 
 button {
-  padding:5px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  font-size:1rem;
+    background: #e7af13;
+  border:none;
+  color:#fff;
+  padding:10px 14px;
+}
+
+button:disabled {
+  background:#e7ae137e;
 }
 
 .icon {

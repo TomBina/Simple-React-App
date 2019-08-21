@@ -1,13 +1,12 @@
 .card {
     display:flex;
     height:120px;
-    margin-bottom:20px;
+    margin-bottom:1rem;
 }
 
 .card-image {
     width:30%;
-    background: rgb(9,9,121);
-    background: linear-gradient(90deg, rgba(9,9,121,1) 0%, rgba(0,212,255,1) 100%);
+    background: #39a9dd;
 }
 
 .card-image .icon-wrapper {
@@ -17,7 +16,7 @@
 
 .card-image .icon {
     margin:0;
-    color:#fff;
+    color:rgb(255, 255, 255);
     font-size:100px;
     position: absolute;
     top: 50%;
@@ -27,10 +26,9 @@
 
 .card-body {
     width:70%;
+    background:rgba(255, 255, 255, 0.915);
+    color:#000;
     box-sizing: border-box;
-    border-top:1px solid #c9c9c9;
-    border-right:1px solid #c9c9c9;
-    border-bottom:1px solid #c9c9c9;
 }
 
 .card-body .text-wrapper {
