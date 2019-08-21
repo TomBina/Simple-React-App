@@ -3,7 +3,6 @@ import { Redirect } from "react-router-dom";
 import { useForm } from "./hooks/useForm";
 import { useDoc } from "./hooks/useDoc";
 import FieldValidator from "./FieldValidator";
-import "./AddCustomer.css";
 
 function UpdateCustomer({ match }) {
     let [customer, form, setCustomer] = useForm({
