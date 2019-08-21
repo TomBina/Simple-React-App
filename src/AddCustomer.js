@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { Redirect } from "react-router-dom";
-import "./AddCustomer.css";
 import { useForm } from "./hooks/useForm";
 import FieldValidator from "./FieldValidator";
 import db from "./firebase/firebase";
