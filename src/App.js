@@ -1,16 +1,18 @@
 import React from "react";
 import Menu from "./Menu";
+import logo from "./logo.svg";
 
 function App() {
   return (
     <div>
       <Menu />
       <h1>Simple React app</h1>
+      <img src={logo} width="200" />
       <p>This is an example of an app written in React. During the course, we will add many features like:</p>
       <ul>
         <li>Sign in/sign up.</li>
         <li>Add, update, and delete customers.</li>
-        <li>Search customers</li>
+        <li>Search customers.</li>
         <li>Persist data in Cloud Firestore.</li>
         <li>Log user actions.</li>
       </ul>
